@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S.A.R.G.I.S Mini App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Strategic AI Research & Guardian Intelligence System</p>
+        <h1>S.A.R.G.I.S</h1>
+        <p class="lead">
+          Полноценный учебный cockpit: профиль ученика, тренировки, интеллект-карта тем, правила, ритм роста и интерфейс, который выглядит как настоящий цифровой наставник.
+        </p>
+        <div class="hero-actions">
+          <button id="loadProfile" class="hero-button">Открыть профиль</button>
+          <button id="loadPractice" class="hero-button secondary">Старт тренировки</button>
+        </div>
+        <div class="hero-ribbon">
+          <span>Math Core</span>
+          <span>RU School</span>
+          <span>Telegram Ready</span>
+        </div>
+      </div>
+      <div class="hero-card orbit-card">
+        <div class="badge">Mission Control</div>
+        <div class="model">SARGIS / Student OS</div>
+        <p>Мини-приложение с ощущением продукта: адаптивный режим ученика, быстрые задания, визуальный прогресс и живой интерфейс для ежедневной практики.</p>
+        <div class="hero-stats">
+          <div>
+            <span class="stat-label">Покрытие</span>
+            <strong>1-11 класс</strong>
+          </div>
+          <div>
+            <span class="stat-label">Стек</span>
+            <strong>Pages App</strong>
+          </div>
+          <div>
+            <span class="stat-label">Режим</span>
+            <strong>Smart Practice</strong>
+          </div>
+          <div>
+            <span class="stat-label">Тон</span>
+            <strong>Sharp + Clean</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <label>
+        <span>User ID</span>
+        <input id="userId" type="number" placeholder="Telegram user id">
+      </label>
+      <label>
+        <span>Имя</span>
+        <input id="userName" type="text" placeholder="Ученик">
+      </label>
+      <label>
+        <span>Класс</span>
+        <select id="grade">
+          <option value="">Авто</option>
+          <option value="5">5 класс</option>
+          <option value="6">6 класс</option>
+          <option value="7">7 класс</option>
+          <option value="8">8 класс</option>
+          <option value="9">9 класс</option>
+          <option value="10">10 класс</option>
+          <option value="11">11 класс</option>
+        </select>
+      </label>
+      <label>
+        <span>Тема</span>
+        <select id="topic">
+          <option value="">Адаптивно</option>
+          <option value="arithmetic">Арифметика</option>
+          <option value="fractions">Дроби</option>
+          <option value="equations">Уравнения</option>
+          <option value="geometry">Геометрия</option>
+          <option value="functions">Функции</option>
+          <option value="trigonometry">Тригонометрия</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="command-grid">
+      <article class="command-card accent">
+        <span class="command-kicker">Skill Track</span>
+        <h3>Маршрут развития</h3>
+        <p>Отрабатывай слабые темы, фиксируй прогресс и двигайся от базовых вычислений к тригонометрии и функциям.</p>
+      </article>
+      <article class="command-card">
+        <span class="command-kicker">Tutor Mode</span>
+        <h3>Школьная логика</h3>
+        <p>Русская архитектура объяснений: правило, шаги, проверка, закрепление.</p>
+      </article>
+      <article class="command-card">
+        <span class="command-kicker">Future Stack</span>
+        <h3>Расширяемая платформа</h3>
+        <p>Математика сейчас, затем физика, английский, программирование и персональный учебный профиль.</p>
+      </article>
+    </section>
+
+    <section class="insight-strip">
+      <article class="insight">
+        <span class="insight-kicker">Сильный режим</span>
+        <p>Упор на точные ответы, школьную терминологию и понятную структуру решения.</p>
+      </article>
+      <article class="insight">
+        <span class="insight-kicker">Локальная память</span>
+        <p>Прогресс и выбранные настройки сохраняются на устройстве пользователя.</p>
+      </article>
+      <article class="insight">
+        <span class="insight-kicker">Telegram Ready</span>
+        <p>Автоматически подхватывает имя и id из Telegram WebApp, если открыт из бота.</p>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel spotlight-panel">
+        <div class="panel-topline">
+          <h2>Интеллект-карта</h2>
+          <span class="panel-chip">Learning Map</span>
+        </div>
+        <div class="topic-cloud">
+          <button class="topic-pill" data-topic-pick="arithmetic">Арифметика</button>
+          <button class="topic-pill" data-topic-pick="fractions">Дроби</button>
+          <button class="topic-pill" data-topic-pick="equations">Уравнения</button>
+          <button class="topic-pill" data-topic-pick="geometry">Геометрия</button>
+          <button class="topic-pill" data-topic-pick="functions">Функции</button>
+          <button class="topic-pill" data-topic-pick="trigonometry">Тригонометрия</button>
+        </div>
+        <div id="focusTopic" class="focus-topic">Выбери тему, и приложение переключит тренировку и правила.</div>
+      </article>
+
+      <article class="panel mission-panel">
+        <div class="panel-topline">
+          <h2>Дневная миссия</h2>
+          <span class="panel-chip">Momentum</span>
+        </div>
+        <div id="dailyMission" class="mission-card"></div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="panel panel-profile">
+        <div class="panel-topline">
+          <h2>Профиль</h2>
+          <span class="panel-chip">Student Core</span>
+        </div>
+        <div id="profile" class="content muted">Здесь появится профиль ученика.</div>
+      </article>
+
+      <article class="panel panel-practice">
+        <div class="panel-topline">
+          <h2>Тренировка</h2>
+          <span class="panel-chip">Practice Engine</span>
+        </div>
+        <div id="practice" class="content muted">Здесь появится новая задача.</div>
+        <div class="answer-box">
+          <input id="answerInput" type="text" placeholder="Введи ответ">
+          <button id="checkAnswer">Проверить</button>
+        </div>
+        <div id="checkResult" class="content muted compact">Проверка пока пуста.</div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Быстрые правила</h2>
+          <span class="panel-chip">Math Base</span>
+        </div>
+        <div id="rules" class="content compact"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Статистика</h2>
+          <span class="panel-chip">Progress</span>
+        </div>
+        <div id="stats" class="content compact"></div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Сцены использования</h2>
+          <span class="panel-chip">Scenarios</span>
+        </div>
+        <div class="scenario-list">
+          <div class="scenario-item">
+            <strong>Быстрый разогрев</strong>
+            <p>Открой тренировку и реши 3 коротких задачи подряд, чтобы войти в ритм.</p>
+          </div>
+          <div class="scenario-item">
+            <strong>Разбор слабой темы</strong>
+            <p>Выбери тему в интеллект-карте и используй правила справа как шпаргалку.</p>
+          </div>
+          <div class="scenario-item">
+            <strong>Мини-спринт</strong>
+            <p>Собери высокую точность и преврати слабую тему в сильную прямо в профиле.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Видение продукта</h2>
+          <span class="panel-chip">Roadmap</span>
+        </div>
+        <div class="roadmap">
+          <div class="roadmap-item active">
+            <span>01</span>
+            <div>
+              <strong>Math OS</strong>
+              <p>Точные правила, тренировки, быстрые задачи и учебный профиль.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span>02</span>
+            <div>
+              <strong>Physics Layer</strong>
+              <p>Формулы, визуальные подсказки и задачи по механике, электричеству и оптике.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span>03</span>
+            <div>
+              <strong>Language + Code</strong>
+              <p>Английский, программирование и персональные учебные маршруты в одном месте.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
