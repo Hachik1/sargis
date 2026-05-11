@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S.A.R.G.I.S Mini App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Strategic AI Research & Guardian Intelligence System</p>
+        <h1>S.A.R.G.I.S</h1>
+        <p class="lead">
+          Полноценный учебный cockpit: профиль ученика, тренировки, интеллект-карта тем, правила, ритм роста и интерфейс, который выглядит как настоящий цифровой наставник.
+        </p>
+        <div class="hero-actions">
+          <button id="loadProfile" class="hero-button">Открыть профиль</button>
+          <button id="loadPractice" class="hero-button secondary">Старт тренировки</button>
+        </div>
+        <div class="hero-ribbon">
+          <span>Math Core</span>
+          <span>RU School</span>
+          <span>Telegram Ready</span>
+        </div>
+      </div>
+      <div class="hero-card orbit-card">
+        <div class="badge">Mission Control</div>
+        <div class="model">SARGIS / Student OS</div>
+        <p>Мини-приложение с ощущением продукта: адаптивный режим ученика, быстрые задания, визуальный прогресс и живой интерфейс для ежедневной практики.</p>
+        <div class="hero-stats">
+          <div>
+            <span class="stat-label">Уровень</span>
+            <strong id="heroLevel">01</strong>
+          </div>
+          <div>
+            <span class="stat-label">XP</span>
+            <strong id="heroXp">0</strong>
+          </div>
+          <div>
+            <span class="stat-label">Серия</span>
+            <strong id="heroStreak">0</strong>
+          </div>
+          <div>
+            <span class="stat-label">Энергия</span>
+            <strong id="heroEnergy">100%</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <label>
+        <span>Идентификатор</span>
+        <input id="publicId" type="text" placeholder="Скрыт" readonly>
+      </label>
+      <label>
+        <span>Алиас</span>
+        <input id="userAlias" type="text" placeholder="Например, Vector">
+      </label>
+      <label>
+        <span>Класс</span>
+        <select id="grade">
+          <option value="">Авто</option>
+          <option value="5">5 класс</option>
+          <option value="6">6 класс</option>
+          <option value="7">7 класс</option>
+          <option value="8">8 класс</option>
+          <option value="9">9 класс</option>
+          <option value="10">10 класс</option>
+          <option value="11">11 класс</option>
+        </select>
+      </label>
+      <label>
+        <span>Тема</span>
+        <select id="topic">
+          <option value="">Адаптивно</option>
+          <option value="arithmetic">Арифметика</option>
+          <option value="fractions">Дроби</option>
+          <option value="percentages">Проценты</option>
+          <option value="proportions">Пропорции</option>
+          <option value="equations">Уравнения</option>
+          <option value="algebra">Алгебра</option>
+          <option value="geometry">Геометрия</option>
+          <option value="functions">Функции</option>
+          <option value="trigonometry">Тригонометрия</option>
+        </select>
+      </label>
+      <label>
+        <span>Режим</span>
+        <select id="mode">
+          <option value="practice">Практика</option>
+          <option value="theory">Теория</option>
+          <option value="exam">Экзамен</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="command-grid">
+      <article class="command-card accent">
+        <span class="command-kicker">Skill Track</span>
+        <h3>Маршрут развития</h3>
+        <p>Отрабатывай слабые темы, фиксируй прогресс и двигайся от базовых вычислений к тригонометрии и функциям.</p>
+      </article>
+      <article class="command-card">
+        <span class="command-kicker">Tutor Mode</span>
+        <h3>Школьная логика</h3>
+        <p>Русская архитектура объяснений: правило, шаги, проверка, закрепление.</p>
+      </article>
+      <article class="command-card">
+        <span class="command-kicker">Future Stack</span>
+        <h3>Расширяемая платформа</h3>
+        <p>Математика сейчас, затем физика, английский, программирование и персональный учебный профиль.</p>
+      </article>
+    </section>
+
+    <section class="insight-strip">
+      <article class="insight">
+        <span class="insight-kicker">Сильный режим</span>
+        <p>Упор на точные ответы, школьную терминологию и понятную структуру решения.</p>
+      </article>
+      <article class="insight">
+        <span class="insight-kicker">Локальная память</span>
+        <p>Прогресс и выбранные настройки сохраняются локально без показа реальных Telegram ID и служебных данных.</p>
+      </article>
+      <article class="insight">
+        <span class="insight-kicker">Telegram Ready</span>
+        <p>Если приложение открыто из Telegram, реальный id не показывается: используется только защищенный анонимный ключ.</p>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel spotlight-panel">
+        <div class="panel-topline">
+          <h2>Интеллект-карта</h2>
+          <span class="panel-chip">Learning Map</span>
+        </div>
+        <div class="topic-cloud">
+          <button class="topic-pill" data-topic-pick="arithmetic">Арифметика</button>
+          <button class="topic-pill" data-topic-pick="fractions">Дроби</button>
+          <button class="topic-pill" data-topic-pick="percentages">Проценты</button>
+          <button class="topic-pill" data-topic-pick="proportions">Пропорции</button>
+          <button class="topic-pill" data-topic-pick="equations">Уравнения</button>
+          <button class="topic-pill" data-topic-pick="algebra">Алгебра</button>
+          <button class="topic-pill" data-topic-pick="geometry">Геометрия</button>
+          <button class="topic-pill" data-topic-pick="functions">Функции</button>
+          <button class="topic-pill" data-topic-pick="trigonometry">Тригонометрия</button>
+        </div>
+        <div id="focusTopic" class="focus-topic">Выбери тему, и приложение переключит тренировку и правила.</div>
+      </article>
+
+      <article class="panel mission-panel">
+        <div class="panel-topline">
+          <h2>Дневная миссия</h2>
+          <span class="panel-chip">Momentum</span>
+        </div>
+        <div id="dailyMission" class="mission-card"></div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel coach-panel">
+        <div class="panel-topline">
+          <h2>AI Coach</h2>
+          <span class="panel-chip">Local Brain</span>
+        </div>
+        <div id="coach" class="coach-card"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Режимы работы</h2>
+          <span class="panel-chip">Modes</span>
+        </div>
+        <div class="mode-grid">
+          <button class="mode-card" data-topic-pick="equations">Быстрый старт</button>
+          <button class="mode-card" data-topic-pick="fractions">Анти-слабость</button>
+          <button class="mode-card" data-topic-pick="trigonometry">Экзамен focus</button>
+          <button class="mode-card" data-topic-pick="functions">Старшие классы</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Теория по теме</h2>
+          <span class="panel-chip">Theory Cards</span>
+        </div>
+        <div id="theoryCard" class="theory-card"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Режим класса</h2>
+          <span class="panel-chip">Grade Lens</span>
+        </div>
+        <div id="gradeOverview" class="grade-overview"></div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="panel panel-profile">
+        <div class="panel-topline">
+          <h2>Профиль</h2>
+          <span class="panel-chip">Student Core</span>
+        </div>
+        <div id="profile" class="content muted">Здесь появится профиль ученика.</div>
+      </article>
+
+      <article class="panel panel-practice">
+        <div class="panel-topline">
+          <h2>Тренировка</h2>
+          <span class="panel-chip">Practice Engine</span>
+        </div>
+        <div id="practice" class="content muted">Здесь появится новая задача.</div>
+        <div class="answer-box">
+          <input id="answerInput" type="text" placeholder="Введи ответ">
+          <button id="checkAnswer">Проверить</button>
+        </div>
+        <div id="checkResult" class="content muted compact">Проверка пока пуста.</div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Быстрые правила</h2>
+          <span class="panel-chip">Math Base</span>
+        </div>
+        <div id="rules" class="content compact"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Статистика</h2>
+          <span class="panel-chip">Progress</span>
+        </div>
+        <div id="stats" class="content compact"></div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Достижения</h2>
+          <span class="panel-chip">Achievements</span>
+        </div>
+        <div id="achievements" class="achievement-grid"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Фокус недели</h2>
+          <span class="panel-chip">Adaptive Focus</span>
+        </div>
+        <div id="focusWeek" class="focus-week"></div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel signal-panel">
+        <div class="panel-topline">
+          <h2>Signal Forge</h2>
+          <span class="panel-chip">Anomaly Lab</span>
+        </div>
+        <div class="signal-lab">
+          <textarea id="signalInput" class="signal-input" placeholder="Вставь задачу, кусок текста, координаты или любой запрос. Mini app разберет сигнал, определит домен, сложность, скрытые ловушки и предложит следующий ход."></textarea>
+          <div class="signal-actions">
+            <button id="scanSignal">Сканировать сигнал</button>
+            <button id="forgeMission" class="secondary">Собрать миссию</button>
+          </div>
+          <div id="signalFingerprint" class="signal-output">Здесь появится отпечаток сигнала.</div>
+          <div id="signalAdvice" class="signal-grid"></div>
+        </div>
+      </article>
+
+      <article class="panel boss-panel">
+        <div class="panel-topline">
+          <h2>Boss Raid</h2>
+          <span class="panel-chip">Insane Mode</span>
+        </div>
+        <div id="bossArena" class="boss-arena"></div>
+        <div class="boss-actions">
+          <button id="startBoss">Старт рейда</button>
+          <button id="hitBoss" class="secondary">Ударить босса</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Skill Matrix</h2>
+          <span class="panel-chip">Telemetry</span>
+        </div>
+        <div id="skillMatrix" class="skill-matrix"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Activity Feed</h2>
+          <span class="panel-chip">Live Stream</span>
+        </div>
+        <div id="activityFeed" class="activity-feed"></div>
+      </article>
+    </section>
+
+    <section class="grid lower-grid">
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Сцены использования</h2>
+          <span class="panel-chip">Scenarios</span>
+        </div>
+        <div class="scenario-list">
+          <div class="scenario-item">
+            <strong>Быстрый разогрев</strong>
+            <p>Открой тренировку и реши 3 коротких задачи подряд, чтобы войти в ритм.</p>
+          </div>
+          <div class="scenario-item">
+            <strong>Разбор слабой темы</strong>
+            <p>Выбери тему в интеллект-карте и используй правила справа как шпаргалку.</p>
+          </div>
+          <div class="scenario-item">
+            <strong>Signal Forge</strong>
+            <p>Вставь любой текст или задачу, и mini app превратит это в диагностический учебный сигнал с миссией.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-topline">
+          <h2>Видение продукта</h2>
+          <span class="panel-chip">Roadmap</span>
+        </div>
+        <div class="roadmap">
+          <div class="roadmap-item active">
+            <span>01</span>
+            <div>
+              <strong>Math OS</strong>
+              <p>Точные правила, тренировки, быстрые задачи и учебный профиль.</p>
+            </div>
+          </div>
+          <div class="roadmap-item active">
+            <span>02</span>
+            <div>
+              <strong>Signal Forge</strong>
+              <p>Диагностика любого входящего сигнала: задача, координаты, текст, тема, слабые ловушки и следующий ход.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span>03</span>
+            <div>
+              <strong>Boss Arena</strong>
+              <p>Фазовые челленджи, таймер, XP и режим настоящего экзаменационного давления.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
